@@ -17,12 +17,15 @@
 
   color: var(--text);
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* border: 1px solid blue; */
 }
 
 body {
   display: flex;
   flex-direction: column;
 
+  width: 100%;
   max-width: 1500px;
   margin: 0 auto;
 }
@@ -30,7 +33,52 @@ body {
 button {
   font-family : inherit;
   font-size: 1rem;
+
   border-radius: 4px;
+  background: white;
+  border: 1px solid var(--shape)
+}
+
+.section-title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.line {
+  flex: 0.45;
+  border-bottom: solid 1px var(--shape);
+  transform: translateY(-50%);
+}
+
+h2 {
+  font-size: 18px;
+  line-height: 16px;
+  font-size: 1.125rem;
+}
+
+label {
+  margin-bottom: 7px;
+}
+
+input {
+  border: var(--shape) 1px solid;
+  height: 30px;
+  width: 340px;
+  margin-bottom: 20px;
+}
+
+input[type=submit] {
+  background: white;
+  border-radius: 4px;
+  font-size: 1rem;
+  line-height: 1rem;
+  width: 340px;
+  height: 40px;
+}
+
+input[type=radio] {
+  height: auto;
+  width: auto;
 }
 
 /* ==================== */
@@ -83,20 +131,47 @@ header button {
   width: 160px;
 }
 
+.irregularEffect {
+  transform: skewY(4deg);
+  color: white;
+  background: white;
+  z-index: 1;
+  width: 1800px;
+  height: 120px;
+  position: absolute;
+  left: -300px;
+  top: -60px;
+}
+
+header .triangleShape {
+  /* position: absolute;
+  z-index: 1;
+  background-color: red; */
+
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-left: 100px solid red;
+  border-bottom: 50px solid transparent;
+}
 
 /* ==================== */
 /* Main */
 /* ==================== */
 main {
-  width: 920px;
-  margin: 20px auto 0;
-}
+  /* position: relative; */
+  /* top: -100px; */
+  /* z-index: 1; */
 
+  width: 920px;
+  margin: 0 auto;
+}
 
 /* Algorithm */
 #algorithm {
   display: flex;
   justify-content: space-between;
+  margin-bottom: 80px;
 }
 
 #algorithm h2 {
@@ -118,6 +193,7 @@ main {
 
 #algorithm article {
   width: 520px;
+  /* height: 400px; */
 }
 
 #algorithm form {
@@ -126,26 +202,121 @@ main {
   flex-direction: column;
 }
 
-#algorithm form input {
-  border: var(--shape) 1px solid;
-  height: 30px;
-  margin: 7px 0 20px;
-}
-
-#algorithm form input[type=submit] {
-  background: white;
-  border-radius: 4px;
-  font-size: 16px;
-  font-size: 1rem;
-  height: 39px;
-}
-
-#algorithm form input[type=radio] {
-  height: auto;
-}
 
 #gender label {
   margin-right: 40px;
+  position: relative;
+  top: -2px;
 }
 
 /* Products */
+#products-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.product img {
+  height: 150px;
+  width: 200px;
+  border: 1px solid var(--shape);
+  margin-bottom: 14px;
+}
+
+.product h3 {
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+p.description {
+  font-size: 12px;
+  line-height: 16px;
+  height: 60px;
+}
+
+p.oldPrice {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 6px;
+}
+
+p.price {
+  font-size: 16px;
+  line-height: 16px;
+  font-weight: bold;
+  margin-bottom: 7px;
+}
+
+p.installments {
+  font-size: 12px;
+  line-height: 16px;
+  margin-bottom: 10px;
+}
+
+.product button {
+  width: 100%;
+  padding: 6px 0;
+}
+
+button#moreProducts {
+  display: block;
+  margin: 52px auto 128px;
+  padding: 10px 36px;
+}
+
+/* Share */
+#share {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+#share p {
+  font-size: 14px;
+  line-height: 16px;
+
+  margin-top: 44px;
+}
+
+#share label {
+  font-size: 12px;
+  line-height: 14px;
+}
+
+#share fieldset {
+  width: 720px;
+  display: grid;
+  
+  grid-template-rows: auto auto;
+  grid-auto-flow: column;
+  grid-column-gap: 40px;
+
+  text-align: left;
+
+  margin: 39px auto 0;
+}
+
+#share input[type=submit] {
+  margin: 50px 0 70px;
+}
+
+
+/* ==================== */
+/* Footer */
+/* ==================== */
+
+/* .irregularEffect {
+  transform: skewY(4deg);
+  color: white;
+  background: white;
+  z-index: 1;
+  width: 1800px;
+  height: 120px;
+  position: relative;
+  left: -300px;
+  top: -60px;
+} */
