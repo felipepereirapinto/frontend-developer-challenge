@@ -201,6 +201,7 @@ main {
 .product img {
   height: 150px;
   width: 200px;
+  object-fit: contain;
   border: 1px solid var(--shape);
   margin-bottom: 14px;
 }
