@@ -35,9 +35,7 @@ const DOM = {
 const Utils = {
   parsePrice(price) {
     return 'R$' + price.toFixed(2).replace('.',',')
-  },
-
-  
+  }
 }
 
 const App = {
