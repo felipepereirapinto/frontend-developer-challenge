@@ -41,23 +41,38 @@
 
       <form action="">
         <label for="yourName">Seu nome:</label>
-        <input type="text">
+        <input id="yourName" type="text" required>
         
         <label for="yourEmail">E-mail:</label>
-        <input type="text">
+        <input 
+          id="yourEmail"
+          type="text"
+          pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+          title="Por favor insira um e-mail válido"
+          required
+        >
 
-        <label for="">CPF:</label>
-        <input type="text">
+        <label for="yourCPF">CPF:</label>
+        <input
+          id="yourCPF"
+          type="text"
+          pattern="[0-9]{11}"
+          title="Por favor insira apenas os números do CPF"
+          required 
+        >
 
-        <div id="gender">
-          <input type="radio" name="gender" id="male">
+        <fieldset id="gender">
+          <input type="radio" name="gender" id="male" required>
           <label for="male">Masculino</label>
   
           <input type="radio" name="gender" id="female">
-          <label for="female">Feminino</label>
-        </div>
+          <label for="female">Feminino</label>  
+  
+          <input type="radio" name="gender" id="other">
+          <label for="other">Outro</label>  
+        </fieldset>
 
-        <input type="submit" value="Enviar">
+        <input id="signNewsletter" type="submit" value="Enviar">
       </form>
     </section>
 
@@ -70,7 +85,7 @@
 
       <div id="products-grid"></div>  
 
-      <button id="moreProducts" onclick="loadMoreProducts()">Ainda mais produtos aqui!</button>
+      <button id="moreProducts" onclick="App.showMoreProducts()">Ainda mais produtos aqui!</button>
     </section>
 
     <section id="share">
@@ -85,13 +100,19 @@
       <form action="">
         <fieldset>
           <label for="friendsName">Nome do seu amigo:</label>
-          <input type="text">
+          <input id="friendsName" type="text" required>
           
           <label for="friendsEmail">E-mail:</label>
-          <input type="text">
+          <input 
+            id="friendsEmail"
+            type="text"
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Por favor insira um e-mail válido"
+            required 
+          >
         </fieldset>
 
-        <input type="submit" value="Enviar agora">
+        <input id="shareNewsletter" type="submit" value="Enviar agora">
       </form>
     </section>
   </main>

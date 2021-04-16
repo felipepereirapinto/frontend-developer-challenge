@@ -6,19 +6,15 @@ const API = {
   async fetchProducts( url ) {
     let response = await fetch( url )
     let data = await response.json()
-    API.nextPage = data.nextPage
+
+    API.nextPage = 'https://' + data.nextPage
     API.products = data.products
     return
   }
 }
 
 const DOM = {
-  productsContainer: document.querySelector('#products-grid'),
-  products: {},
-  
-  clearProducts() {
-    DOM.productsContainer.innerHTML = ''
-  },
+  productsContainer: document.querySelector('#products-grid'),  
 
   populateProducts() {
     API.products.forEach( product => { 
@@ -39,13 +35,18 @@ const DOM = {
 const Utils = {
   parsePrice(price) {
     return 'R$' + price.toFixed(2).replace('.',',')
-  }
+  },
+
+  
 }
 
 const App = {
   init() {
-    API.fetchProducts(API.url)
-      .then( () => DOM.populateProducts() )
+    API.fetchProducts(API.url).then( () => DOM.populateProducts() )
+  },
+
+  showMoreProducts() {
+    API.fetchProducts(API.nextPage).then( () => DOM.populateProducts() )
   }
 }
 

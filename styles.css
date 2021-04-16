@@ -28,14 +28,7 @@ body {
   margin: 0 auto;
 }
 
-button {
-  font-family : inherit;
-  font-size: 1rem;
 
-  border-radius: 4px;
-  background: white;
-  border: 1px solid var(--shape)
-}
 
 .section-title {
   display: flex;
@@ -58,11 +51,22 @@ label {
   margin-bottom: 7px;
 }
 
+
+button {
+  font-family : inherit;
+  font-size: 1rem;
+
+  border-radius: 4px;
+  background: white;
+  border: 1px solid var(--shape)
+}
+
 input {
   border: var(--shape) 1px solid;
   height: 30px;
   width: 340px;
   margin-bottom: 20px;
+  padding-left: 5px;
 }
 
 input[type=submit] {
@@ -77,6 +81,19 @@ input[type=submit] {
 input[type=radio] {
   height: auto;
   width: auto;
+}
+
+/* Remove spin arrows from CPF input */
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
 }
 
 /* ==================== */
@@ -292,12 +309,9 @@ button#moreProducts {
 /* ==================== */
 footer {
   background: var(--shape);
-  margin-bottom: 50px;
+  /* margin-bottom: 50px; */
 
   text-align: center;
-  /* display: flex; */
-  /* flex-direction: column; */
-  /* align-items: center; */
 }
 
 footer .triangleShape {
@@ -313,6 +327,6 @@ footer p {
   color: white;
   font-size: 12px;
   line-height: 18px;
-  padding: 20px 0 86px;
+  padding: 90px 0;
 }
 
